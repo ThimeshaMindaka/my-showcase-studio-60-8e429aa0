@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import componentTagger from "vite-plugin-component-tagger";
 import path from "path";
 
 export default defineConfig(({ mode }) => ({
@@ -9,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "0.0.0.0",
     port: 3000,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
